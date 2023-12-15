@@ -1,0 +1,16 @@
+.formfield-width {
+  width: 500px;
+}
+.example {
+  margin: auto;
+  max-width: 500px;
+  margin-top: 10%;
+}
+.error-msg {
+  color: #ff0000;
+  font-style: italic;
+  font-size: 0.8em;
+}
+.pw-input {
+  margin-top: 30px;
+}

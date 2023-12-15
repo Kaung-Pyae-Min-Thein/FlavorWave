@@ -1,0 +1,25 @@
+.status-dialog {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mat-dialog-container {
+  padding-bottom: 0;
+}
+
+.mat-dialog-actions {
+  margin: 0;
+}
+
+.status-container {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+[mat-dialog-title] {
+  font-weight: 600;
+  font-size: 18px;
+}

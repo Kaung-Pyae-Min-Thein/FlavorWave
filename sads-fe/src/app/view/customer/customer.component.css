@@ -1,0 +1,16 @@
+.container {
+}
+
+.form {
+    width: 55%;
+    height: auto;
+    flex-direction: column ;
+}
+
+.next-btn {
+    justify-content: end;
+}
+
+.next-btn button {
+    padding: 2% 4%;
+}

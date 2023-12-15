@@ -1,0 +1,9 @@
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+::ng-deep .mat-step-icon-content { display: none !important; }
+
+.mat-horizontal-stepper:focus {
+  background: transparent;
+}
+

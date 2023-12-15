@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Changing Permit Status To</h1>
+
+<div mat-dialog-actions>
+  <button disabled class="permit-btn" mat-raised-button mat-dialog-close>
+    Pending
+  </button>
+
+  <button
+    (click)="changePermitStatus('requesting')"
+    [disabled]="data.permit_status != 'pending'"
+    class="permit-btn"
+    mat-raised-button
+    mat-dialog-close
+  >
+    Requesting
+  </button>
+
+  <button
+    (click)="changePermitStatus('accepted')"
+    [disabled]="data.permit_status != 'requesting'"
+    class="permit-btn"
+    mat-raised-button
+    mat-dialog-close
+  >
+    Accepted
+  </button>
+
+  <button
+    (click)="changePermitStatus('rejected')"
+    [disabled]="data.permit_status != 'requesting'"
+    class="permit-btn"
+    mat-raised-button
+    mat-dialog-close
+  >
+    Rejected
+  </button>
+</div>

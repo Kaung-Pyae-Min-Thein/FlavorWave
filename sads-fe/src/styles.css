@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.constrains {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    height: 100%;
+}
+
+.content {
+    position: absolute;
+    left: 12%;
+}
+
+.nav {
+    width: 12%;
+    position: fixed;
+    left: 0; top: 0;
+}
+
+.content {
+    width: 85%;
+    margin-left: 1%;
+}
+
+

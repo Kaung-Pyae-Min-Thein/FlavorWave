@@ -1,0 +1,53 @@
+<div class="flex">
+  <app-sidenav></app-sidenav>
+  <div class="w-full">
+    <div class="max-w-3xl mx-auto mt-10 md:mt-20 mb-4">
+    <button  (click)="goBack()" type="button" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+      <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M15 20v-9H6.8l1.6 1.6L7 14l-4-4l4-4l1.4 1.4L6.8 9H15q.825 0 1.413.588T17 11v9z"/></svg>
+      Back</button>
+    </div>
+    <div class="max-w-3xl bg-slate-50 pt-5 rounded mx-auto " *ngIf="res != undefined">
+
+      <h4 class="px-6 font-medium text-xl">Preorder Information</h4>
+
+      <div class="grid grid-cols-2 space-x-2 px-6 py-4">
+        <div class="">
+          <div class="px-5 py-3 rounded-lg bg-white shadow mb-3 ">
+            <p>Preorder Number : {{ res?.preorder_info?.preorder_number }}</p>
+            <p>Preorder Status : {{ res.preorder_info.status }}</p>
+            <p>Permit Status : {{ res.preorder_info.permit_status}}</p>
+            <p>Ordered Date : {{ res.preorder_info.date }}</p>
+
+          </div>
+          <div class="px-5 py-3 rounded-lg bg-white shadow ">
+            <p>Customer Id : {{ res.customer_info.id}}</p>
+            <p>Customer Name : {{ res.customer_info.name }}</p>
+            <p>Region : {{ res.customer_info.region }}</p>
+        <p>Phone : {{ res.customer_info.phone_number }}</p>
+            <p>Address : {{ res.customer_info.address }}</p>
+
+          </div>
+        </div>
+        <div class="">
+          <h4 class=" text-lg font-medium px-4 mb-2">Ordered Items</h4>
+          <div class=" flex-wrap px-4" style=" display: flex;">
+            <p *ngFor="let item of res.preorder_item_list" class="p-3 h-fit bg-white border-[1.5px] border-slate-400 rounded-lg text-xs me-2 mb-2">{{ item.product_name }} ({{ item.order_count}})</p>
+            <!-- <p class="p-3 h-fit bg-white border-[1.5px] border-slate-400 rounded-lg text-xs me-2 mb-2">Golden Sunshine Tea</p>
+            <p class="p-3 h-fit bg-white border-[1.5px] border-slate-400 rounded-lg text-xs me-2 mb-2">Golden Sunshine Tea</p>
+            <p class="p-3 h-fit bg-white border-[1.5px] border-slate-400 rounded-lg text-xs me-2 mb-2">Golden Sunshine Tea</p>
+            <p class="p-3 h-fit bg-white border-[1.5px] border-slate-400 rounded-lg text-xs me-2 mb-2">Golden Sunshine Tea</p> -->
+
+          </div>
+            <div class="px-4 mt-2">
+              <div class="p-3 bg-white shadow rounded h-fit font-medium">
+                <div class=" flex justify-between mb-2"><span>Total Quantity : </span><span>{{ res.preorder_info.total_quantity }}</span></div>
+                <div class=" flex justify-between "><span>Total Price : </span><span>${{ res.preorder_info.total_price }}</span></div>
+             </div>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

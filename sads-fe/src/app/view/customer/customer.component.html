@@ -1,0 +1,110 @@
+<div class="flex">
+  <app-sidenav></app-sidenav>
+  <div class="w-full">
+    <form class="max-w-2xl mx-auto mt-16" [formGroup]="cusInfoForm">
+      <h4
+        class="flex items-center font-medium text-xl text-zinc-900 dark:text-slate-100 mb-3"
+      >
+        <svg
+          class="me-2 hover:text-primary duration-150"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M12 13q1.45 0 2.475-1.025T15.5 9.5q0-1.45-1.025-2.475T12 6q-1.45 0-2.475 1.025T8.5 9.5q0 1.45 1.025 2.475T12 13Zm-7 8q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21H5Zm0-2h14v-1.15q-1.35-1.325-3.137-2.087T12 15q-2.075 0-3.863.763T5 17.85V19Z"
+          />
+        </svg>
+        Please fill in customer information
+      </h4>
+      <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            formControlName="name"
+            type="text"
+            class="dark:text-white px-2 relative block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none border border-2 border-slate-300 dark:border-zinc-700 rounded-md dark:focus:border-blue-500 -z-0 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-3 -z-10 peer-focus:z-10 origin-[0] peer-focus:bg-white dark:peer-focus:bg-zinc-800 px-3 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5"
+            >Customer Name</label
+          >
+        </div>
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            formControlName="phone_number"
+            type="text"
+            class="dark:text-white px-2 relative block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none border border-2 border-slate-300 dark:border-zinc-700 rounded-md dark:focus:border-blue-500 -z-0 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-3 -z-10 peer-focus:z-10 origin-[0] peer-focus:bg-white dark:peer-focus:bg-zinc-800 px-3 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5"
+            >Phone Number</label
+          >
+        </div>
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <!-- <input
+          formControlName="region"
+          type="text"
+          class="dark:text-white px-2 relative block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none border border-2 border-slate-300 dark:border-zinc-700 rounded-md dark:focus:border-blue-500 -z-0 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        /> -->
+        <select
+          formControlName="region"
+          type="select"
+          class="dark:text-white px-2 relative block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none border border-2 border-slate-300 dark:border-zinc-700 rounded-md dark:focus:border-blue-500 -z-0 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        >
+          <option value="">Select Region</option>
+          <option [value]="region" *ngFor="let region of regions">
+            {{ region }}
+          </option>
+        </select>
+        <label
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-3 -z-10 peer-focus:z-10 origin-[0] peer-focus:bg-white dark:peer-focus:bg-zinc-800 px-3 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5"
+          >Region</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <textarea
+          formControlName="address"
+          cols="30"
+          rows="4"
+          class="dark:text-white px-3 relative block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none border border-2 border-slate-300 dark:border-zinc-700 rounded-md dark:focus:border-blue-500 -z-0 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        ></textarea>
+        <label
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-3 -z-10 peer-focus:z-10 origin-[0] peer-focus:bg-white dark:peer-focus:bg-zinc-800 px-3 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5"
+          >Address</label
+        >
+      </div>
+      <button
+        (click)="createCus()"
+        type="submit"
+        class="group text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-6 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        <i class="fa-solid duration-150 fa-paper-plane me-2"></i>Next
+        <svg
+          class="inline-block w-6 h-6 group-hover:translate-x-2 duration-150"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M12.675 12L9.6 15.075L11 16.5l4.5-4.5L11 7.5L9.6 8.925L12.675 12ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"
+          />
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>

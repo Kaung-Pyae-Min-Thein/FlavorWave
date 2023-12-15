@@ -1,0 +1,16 @@
+<!-- <mat-horizontal-stepper [labelPosition]="'bottom'"> -->
+<mat-stepper linear>
+  <!-- changed step icons -->
+  <mat-step
+    label="Acccept Order"
+    [completed]="data.status != 'pending'"
+    state="order"
+  >
+  </mat-step>
+  <mat-step label="Stock Ready" [completed]="data.status == 'ready' || data.status == 'shipping' || data.status == 'delivered' || data.status =='cancelled' ">
+  </mat-step>
+  <mat-step label="Shipping" [completed]="data.status == 'shipping' || data.status == 'delivered' || data.status =='cancelled' "> </mat-step>
+  <mat-step tabIndex="-1" label="Delivered" [completed]="data.status =='cancelled' "> </mat-step>
+  <mat-step tabIndex="-1" label="Cancelled"> </mat-step>
+  <!-- </mat-horizontal-stepper> -->
+</mat-stepper>

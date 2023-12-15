@@ -1,0 +1,208 @@
+<button
+  data-drawer-target="default-sidebar"
+  data-drawer-toggle="default-sidebar"
+  aria-controls="default-sidebar"
+  type="button"
+  class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+>
+  <span class="sr-only">Open sidebar</span>
+  <svg
+    class="w-6 h-6"
+    aria-hidden="true"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      clip-rule="evenodd"
+      fill-rule="evenodd"
+      d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+    ></path>
+  </svg>
+</button>
+
+<aside
+  id="default-sidebar"
+  class="w-52 h-screen transition-transform -translate-x-full sm:translate-x-0"
+  aria-label="Sidebar"
+>
+  <div
+    class="h-full px-3 py-4 overflow-y-auto bg-gray-50 shadow-md dark:bg-gray-800"
+  >
+    <img
+      src="../../../assets/images/DevGeeks.png"
+      alt="logo"
+      class="w-20 mx-auto mb-2 rounded-xl"
+    />
+    <p class="mb-3 text-lg font-medium text-center">{{ role | titlecase }}</p>
+    <ul class="space-y-2 font-medium">
+      <li *ngIf="role == 'client'">
+        <a
+          routerLink="/preorder"
+          routerLinkActive="active"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        >
+          <svg
+            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"
+            />
+          </svg>
+          <span class="ms-3">Preorder</span>
+        </a>
+      </li>
+      <li *ngIf="role != 'client'">
+        <a
+          routerLink="/sales"
+          routerLinkActive="active"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        >
+          <svg
+            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M6 22q-.825 0-1.412-.587T4 20V8q0-.825.588-1.412T6 6h2q0-1.65 1.175-2.825T12 2q1.65 0 2.825 1.175T16 6h2q.825 0 1.413.588T20 8v12q0 .825-.587 1.413T18 22H6Zm4-16h4q0-.825-.587-1.412T12 4q-.825 0-1.412.588T10 6Zm5 5q.425 0 .713-.288T16 10V8h-2v2q0 .425.288.713T15 11Zm-6 0q.425 0 .713-.288T10 10V8H8v2q0 .425.288.713T9 11Z"
+            />
+          </svg>
+          <span class="flex-1 ms-3 whitespace-nowrap">Sales</span>
+        </a>
+      </li>
+      <li *ngIf="role != 'client'">
+        <a
+          routerLink="/factory"
+          routerLinkActive="active"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        >
+          <svg
+            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M2 22V9.975L9 7v2l5-2v3h8v12H2Zm2-2h16v-8h-8V9.95l-5 2V10l-3 1.325V20Zm7-2h2v-4h-2v4Zm-4 0h2v-4H7v4Zm8 0h2v-4h-2v4Zm7-8h-5l1-8h3l1 8ZM4 20h16H4Z"
+            />
+          </svg>
+          <span class="flex-1 ms-3 whitespace-nowrap">Factory</span>
+        </a>
+      </li>
+      <li *ngIf="role != 'client'">
+        <a
+          routerLink="/warehouse"
+          routerLinkActive="active"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        >
+          <svg
+            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35ZM6 18h12M6 14h12"
+              />
+              <path d="M6 10h12v12H6z" />
+            </g>
+          </svg>
+          <span class="flex-1 ms-3 whitespace-nowrap">Warehouse</span>
+        </a>
+      </li>
+      <li *ngIf="role != 'client'">
+        <a
+          routerLink="/logistics"
+          routerLinkActive="active"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        >
+          <svg
+            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill="currentColor"
+              d="M6.5 9.25a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0Zm3.75.75a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5ZM7 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5ZM2.7 1A1.7 1.7 0 0 0 1 2.7v9A1.3 1.3 0 0 0 2.3 13H3v.7A1.3 1.3 0 0 0 4.3 15h1.4A1.3 1.3 0 0 0 7 13.7V13h2v.7a1.3 1.3 0 0 0 1.3 1.3h1.4a1.3 1.3 0 0 0 1.3-1.3V13h.7a1.3 1.3 0 0 0 1.3-1.3v-9A1.7 1.7 0 0 0 13.3 1H2.7ZM10 13.7V13h2v.7a.3.3 0 0 1-.3.3h-1.4a.3.3 0 0 1-.3-.3ZM6 13v.7a.3.3 0 0 1-.3.3H4.3a.3.3 0 0 1-.3-.3V13h2ZM2 2.7a.7.7 0 0 1 .7-.7h10.6a.7.7 0 0 1 .7.7v9a.3.3 0 0 1-.3.3H13V7.76a2.1 2.1 0 0 0-.108-.664l-.735-2.207A1.3 1.3 0 0 0 10.923 4H5.077a1.3 1.3 0 0 0-1.234.889l-.735 2.207A2.1 2.1 0 0 0 3 7.76V12h-.7a.3.3 0 0 1-.3-.3v-9ZM4 12V8h8v4H4Zm.194-5l.598-1.795A.3.3 0 0 1 5.077 5h5.846a.3.3 0 0 1 .285.205L11.806 7H4.194Z"
+            />
+          </svg>
+
+          <span class="flex-1 ms-3 whitespace-nowrap">Logistics</span>
+        </a>
+      </li>
+      <li *ngIf="role != 'client'">
+        <a
+          routerLink="/admin"
+          routerLinkActive="active"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        >
+          <svg
+            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5.697M18 14v4h4m-4-7V7a2 2 0 0 0-2-2h-2"
+              />
+              <path
+                d="M8 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2zm6 13a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-6-7h4m-4 4h3"
+              />
+            </g>
+          </svg>
+          <span class="flex-1 ms-3 whitespace-nowrap">Admin Report</span>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/login"
+          routerLinkActive="active"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        >
+          <svg
+            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h6q.425 0 .713.288T12 4q0 .425-.288.713T11 5H5v14h6q.425 0 .713.288T12 20q0 .425-.288.713T11 21H5Zm12.175-8H10q-.425 0-.712-.288T9 12q0-.425.288-.712T10 11h7.175L15.3 9.125q-.275-.275-.275-.675t.275-.7q.275-.3.7-.313t.725.288L20.3 11.3q.3.3.3.7t-.3.7l-3.575 3.575q-.3.3-.712.288t-.713-.313q-.275-.3-.262-.712t.287-.688l1.85-1.85Z"
+            />
+          </svg>
+          <span (click)="logout()" class="flex-1 ms-3 whitespace-nowrap"
+            >Logout</span
+          >
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>

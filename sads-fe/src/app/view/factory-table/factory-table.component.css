@@ -1,0 +1,17 @@
+.data-table {
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.header-material {
+  font-size: 1.2em;
+}
+.header-material span {
+  font-weight: bold;
+  margin-left: 15px;
+  color: #19b732;
+}
